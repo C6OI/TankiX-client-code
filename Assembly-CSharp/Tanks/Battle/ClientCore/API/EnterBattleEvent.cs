@@ -1,0 +1,7 @@
+using Platform.Kernel.ECS.ClientEntitySystem.API;
+
+namespace Tanks.Battle.ClientCore.API {
+    public class EnterBattleEvent : Event {
+        public TeamColor TeamColor { get; set; }
+    }
+}

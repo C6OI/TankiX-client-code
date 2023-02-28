@@ -1,0 +1,14 @@
+using UnityEngine;
+using Component = Platform.Kernel.ECS.ClientEntitySystem.API.Component;
+
+namespace Tanks.Battle.ClientGraphics.Impl {
+    public class TankShaderComponent : MonoBehaviour, Component {
+        [SerializeField] Shader opaqueShader;
+
+        [SerializeField] Shader transparentShader;
+
+        public Shader OpaqueShader => opaqueShader;
+
+        public Shader TransparentShader => transparentShader;
+    }
+}

@@ -1,0 +1,9 @@
+using Platform.Kernel.ECS.ClientEntitySystem.API;
+
+namespace Tanks.Lobby.ClientEntrance.API {
+    public class ChangeUserMoneyBufferEvent : Event {
+        public int Crystals { get; set; }
+
+        public int XCrystals { get; set; }
+    }
+}
