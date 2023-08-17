@@ -1,0 +1,19 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using YamlDotNet.Core.Tokens;
+
+namespace YamlDotNet.Core {
+    public class TagDirectiveCollection : KeyedCollection<string, TagDirective> {
+        public TagDirectiveCollection() { }
+
+        public TagDirectiveCollection(IEnumerable<TagDirective> tagDirectives) {
+            foreach (TagDirective tagDirective in tagDirectives) {
+                Add(tagDirective);
+            }
+        }
+
+        protected override string GetKeyForItem(TagDirective item) => item.Handle;
+
+        public new bool Contains(TagDirective directive) => Contains(GetKeyForItem(directive));
+    }
+}

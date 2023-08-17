@@ -1,0 +1,26 @@
+using Platform.Kernel.ECS.ClientEntitySystem.API;
+using Platform.Library.ClientProtocol.API;
+using Tanks.Battle.ClientCore.Impl;
+
+namespace Tanks.Battle.ClientCore.API {
+    [SerialVersionUID(7553964914512142106L)]
+    public interface BonusTemplate : Template {
+        [PersistentConfig]
+        [AutoAdded]
+        BonusConfigComponent bonusConfig();
+
+        [AutoAdded]
+        [PersistentConfig]
+        BonusBoxPrefabComponent bonusBoxPrefab();
+
+        [PersistentConfig]
+        [AutoAdded]
+        BonusParachutePrefabComponent bonusParachutePrefab();
+
+        [AutoAdded]
+        [PersistentConfig]
+        BrokenBonusBoxPrefabComponent brokenBonusBoxPrefab();
+
+        BonusRegionGroupComponent bonusRegionGroup();
+    }
+}

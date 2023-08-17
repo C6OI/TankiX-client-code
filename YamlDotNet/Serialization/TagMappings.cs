@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+
+namespace YamlDotNet.Serialization {
+    public sealed class TagMappings {
+        readonly IDictionary<string, Type> mappings;
+
+        public TagMappings() => mappings = new Dictionary<string, Type>();
+
+        public TagMappings(IDictionary<string, Type> mappings) => this.mappings = new Dictionary<string, Type>(mappings);
+
+        public void Add(string tag, Type mapping) => mappings.Add(tag, mapping);
+
+        internal Type GetMapping(string tag) {
+            Type value;
+
+            if (mappings.TryGetValue(tag, out value)) {
+                return value;
+            }
+
+            return null;
+        }
+    }
+}
